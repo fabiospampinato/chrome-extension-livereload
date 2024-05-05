@@ -1,0 +1,46 @@
+{
+  "name": "chrome-extension-livereload",
+  "repository": "github:fabiospampinato/chrome-extension-livereload",
+  "description": "A tiny and basic livereload solution for chrome extensions.",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./webview": {
+      "import": "./dist/webview.js",
+      "types": "./dist/webview.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "webview": [
+        "./dist/webview.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "compile:watch": "tsex compile --watch",
+    "prepublishOnly": "tsex prepare"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "livereload",
+    "simple"
+  ],
+  "devDependencies": {
+    "@types/chrome": "^0.0.267",
+    "tsex": "^3.2.1",
+    "typescript": "^5.4.5"
+  }
+}
